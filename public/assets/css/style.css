@@ -423,7 +423,8 @@ div.horizontal-slide {
 }
 
 .list-group-item.focus {
-  background-color: #cecece;
+  /* background-color: #cecece; */
+  border-radius: 4px;
 }
 
 
