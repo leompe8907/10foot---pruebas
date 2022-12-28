@@ -7301,7 +7301,7 @@ button.close {
     /* position: relative;*/
     width: auto;
     height: auto;
-    margin: 10px;
+    /* margin: 10px; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7392,7 +7392,7 @@ button.close {
 @media (min-width:768px) {
     .modal-dialog {
         /* width: 600px;*/
-        margin: 5% auto 
+        /* margin: 5% auto  */
     }
 
     .modal-content {
