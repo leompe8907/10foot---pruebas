@@ -392,6 +392,12 @@ div.horizontal-slide {
   align-items: center;
 }
 
+@media screen and (min-width: 480px) and (max-width:500px) {
+  .modal-login{
+    width: 70vw ;
+  }
+}
+
 .login-input {
   background-color: transparent;
   border: none;

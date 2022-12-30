@@ -51,6 +51,12 @@ body {
     /* background-position: center; */
 }
 
+@media screen and (min-width: 480px){
+	#viewport{
+		background-size: cover;
+	}
+}
+
 /* global objects */
 .focusable {
 	cursor: pointer;
