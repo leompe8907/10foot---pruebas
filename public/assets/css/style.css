@@ -392,9 +392,10 @@ div.horizontal-slide {
   align-items: center;
 }
 
-@media screen and (min-width: 480px) and (max-width:500px) {
+@media screen and (min-width: 375px) and (max-width:560px) {
   .modal-login{
     width: 70vw ;
+    justify-content: center;
   }
 }
 
@@ -464,6 +465,12 @@ div.horizontal-slide {
   background-color: transparent;
   border: 0;
   width: 15vw;
+}
+
+@media screen and (min-width: 375px) and (max-width: 560px){
+  .img-logo{
+    width: 30vw;
+  }
 }
 
 /* .header-logo {

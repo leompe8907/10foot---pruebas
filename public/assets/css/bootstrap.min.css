@@ -2029,6 +2029,15 @@ pre code {
     margin-left: -15px
 }
 
+@media screen and (min-width: 375px) and (max-width:560px) {
+    .row {
+        display: flex;
+        align-items: center;
+        width: 35vw;
+        height: 20vh;
+    }
+}
+
 .col-lg-1,
 .col-lg-10,
 .col-lg-11,
@@ -2365,6 +2374,7 @@ pre code {
         width: 15vw;
         height: 20vh;
     }
+
 
     .col-sm-1 {
         width: 8.33333333%
@@ -3270,6 +3280,12 @@ label {
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700
+}
+
+@media screen and (min-width: 380px) and (max-width:560px){
+    label{
+        text-align: center;
+    }
 }
 
 input[type=search] {
@@ -7354,6 +7370,12 @@ button.close {
     margin: 0;
     line-height: 1.42857143;
     padding: 30px;
+}
+
+@media screen and (min-width: 375px) and (max-width:560px){
+    .modal-title{
+        display: none;
+    }
 }
 
 .modal-body {
