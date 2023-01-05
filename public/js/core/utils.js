@@ -81,6 +81,8 @@ jQuery.fn.extend({
 		}
 	},
 
+
+	// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 87 "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png"
 	loadImage: function(src, placeholder){
 		var defaultPlaceholder = "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png";
 		placeholder = placeholder == null || placeholder.length == 0 ?  defaultPlaceholder : placeholder;
@@ -162,6 +164,7 @@ function getDateFormatted(inDate, justTime) {
     });
 }
 
+// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 172 "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png"
 function imgOnError(event) {
 	event.onerror = null; 
 	var $img = $(event);
@@ -203,6 +206,8 @@ function closeApp() {
     // });
 // }
 
+
+// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 217 assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png
 function addImgPlaceholder($images) {
 	$images.each(function() {
 		var placeholder = $(this).data("placeholder");

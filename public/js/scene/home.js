@@ -69,6 +69,8 @@ Scene_Home = (function(Scene) {
 				var percInfo = 100 - percPlayer - percLogo;
 				$(".header-row-info").css({'width': percInfo + '%'});
 
+
+				// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 76 "assets/images/" + CONFIG.app.brand + "/logo-top.png"
 				$("#topLogoImage").addClass("hide");
 				$("#rightLogoImage").removeClass("hide");
 				$("#rightLogoImage").attr("src", "assets/images/" + CONFIG.app.brand + "/logo-top.png");
@@ -82,6 +84,7 @@ Scene_Home = (function(Scene) {
 				this.$el.find("#menuEPGLabel").parent().addClass("hide");
 			}
 
+			// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 87 antes de ==
 			if (CONFIG.app.brand == "meganet") {
 				$("#menuEPGLabel").parent().hide();
 			}
