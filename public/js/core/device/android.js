@@ -107,9 +107,9 @@ Device_Android = (function(Events) {
 			var scope = this;
 			this.eexit = false;
 
-			// Cambiar el CONFIG.app.appName por el appName en la linea 112 CONFIG.app.appName
+			// Cambiar el CONFIG.app.appName por el appName en la linea 112 despues de la coma (,)
 			if (history.length <= 1) {
-				history.pushState({ 'position': history.length}, CONFIG.app.appName);
+				history.pushState({ 'position': history.length}, "Bromteck");
 			} else {
 				history.go(1);
 			}

@@ -1,6 +1,6 @@
 var cv = {
-	url: CONFIG.app.drmURL,
-	apiToken: CONFIG.app.drmToken, //DyqjydAnQjYMJuOgcEWm //gQposTlrMIOYQVdYBNYC
+	url: "https://cv01.panaccess.com/",
+	apiToken: "gQposTlrMIOYQVdYBNYC", //DyqjydAnQjYMJuOgcEWm //gQposTlrMIOYQVdYBNYC
 	sessionId: null,
 	userName: null,
 	password: null,

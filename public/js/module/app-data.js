@@ -2,6 +2,7 @@ AppData = (function (Events) {
 
     var AppData = {};
 
+    // Modificar el this.BASE_URL al cv donde quieren que se apunte
     $.extend(true, AppData, Events, {
         init: function () {
             this.bouquets = [];
@@ -14,7 +15,7 @@ AppData = (function (Events) {
             this.EPG_API_KEY = CONFIG.app.epgApiKey; 
             this.EPG_API_TOKEN = CONFIG.app.epgApiToken;
             this.EPG_DAYS_OFFSET = CONFIG_CURRENT_BRAND.brand == "rsogo" ? 1 : 2;
-            this.BASE_URL = CONFIG.app.drmURL;
+            this.BASE_URL = "https://cv01.panaccess.com/";
             this.IMAGE_URL_VOD_POSTER_LIST = CONFIG.app.imageUrlVodPosterList;
             this.IMAGE_URL_VOD_POSTER_INFO = CONFIG.app.imageUrlVodPosterInfo
             this.IMAGE_URL_VOD_ORIGINAL_IMAGE = CONFIG.app.imageUrlVodOriginalImage;

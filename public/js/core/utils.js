@@ -84,7 +84,7 @@ jQuery.fn.extend({
 
 	// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 87 "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png"
 	loadImage: function(src, placeholder){
-		var defaultPlaceholder = "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png";
+		var defaultPlaceholder = "assets/images/bromteck/placeholder_220x160.png";
 		placeholder = placeholder == null || placeholder.length == 0 ?  defaultPlaceholder : placeholder;
 		this.attr("src", placeholder);
 
