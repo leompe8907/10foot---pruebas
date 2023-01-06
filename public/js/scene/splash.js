@@ -34,8 +34,8 @@ Scene_Splash = (function (Scene) {
             console.log('render splash scene');
 			$("#alertModalButton").text(__("SettingsOkButton"));
 			$(".img-logo").attr("src", "assets/images/bromteck/logo.png");
-			$("#viewport").css({'background-image': 'url(../assets/images/bromteck/background.png)'});
-			$("#scene-splash").css({'background-image': 'url(../assets/images/bromteck/splash.png)'});
+			$("#viewport").css({'background-image': 'url(assets/images/bromteck/background.png)'});
+			$("#scene-splash").css({'background-image': 'url(assets/images/bromteck/splash.png)'});
 			$("#alertModalConfirmButton").text(__("SettingsOkButton"));
 			$("#alertModalConfirmCancelButton").text(__("SettingsCancelButton"));
 		},
