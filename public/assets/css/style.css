@@ -380,7 +380,7 @@ div.horizontal-slide {
 
 .modal-login {
   width: 25vw;
-  height: 80vh;
+  height: 70vh;
   background-color: #b9b9b91f;
   color: #fff;
   /* text-align: center; */
@@ -392,7 +392,7 @@ div.horizontal-slide {
   align-items: center;
 }
 
-@media screen and (min-width: 375px) and (max-width:767px) {
+@media screen and (min-width: 200px) and (max-width:767px) {
   .modal-login{
     width: 70vw ;
     justify-content: center;
@@ -467,7 +467,7 @@ div.horizontal-slide {
   width: 15vw;
 }
 
-@media screen and (min-width: 375px) and (max-width: 767px){
+@media screen and (min-width: 200px) and (max-width: 767px){
   .img-logo{
     width: 30vw;
   }
