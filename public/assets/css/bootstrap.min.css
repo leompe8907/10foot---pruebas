@@ -2029,7 +2029,7 @@ pre code {
     margin-left: -15px
 }
 
-@media screen and (min-width: 375px) and (max-width:560px) {
+@media screen and (min-width: 375px) and (max-width:767px) {
     .row {
         display: flex;
         align-items: center;
@@ -7372,7 +7372,7 @@ button.close {
     padding: 30px;
 }
 
-@media screen and (min-width: 375px) and (max-width:560px){
+@media screen and (min-width: 375px) and (max-width:767px){
     .modal-title{
         display: none;
     }
