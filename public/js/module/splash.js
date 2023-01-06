@@ -1,7 +1,7 @@
 var splash = {
 	url_cv01: "https://cv01.panaccess.com/",
 	url: "https://cv01.panaccess.com/",
-	 apiToken: "iKBHPqlolcxiVgZrAcvk",
+	apiToken: "gQposTlrMIOYQVdYBNYC",
 	sessionId: null,
 	userName: null,
 	password: null,

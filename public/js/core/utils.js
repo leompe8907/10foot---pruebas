@@ -169,7 +169,7 @@ function imgOnError(event) {
 	event.onerror = null; 
 	var $img = $(event);
 	$img.unbind('error');
-	$img.attr("src", "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png");
+	$img.attr("src", "assets/images/bromteck/placeholder_220x160.png");
 	$img.addClass("img-placeholder");
 }
 
@@ -214,7 +214,7 @@ function addImgPlaceholder($images) {
 		if (typeof placeholder != 'undefined' && placeholder.length > 0) {
 			$(this).parent().css("background", "url(" +placeholder +") no-repeat center center / cover");
 		} else {
-			$(this).parent().css("background", "url(assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png) no-repeat center center / cover");
+			$(this).parent().css("background", "url(assets/images/bromteck/placeholder_220x160.png) no-repeat center center / cover");
 		}
 	});
 }

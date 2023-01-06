@@ -11,7 +11,7 @@ VODDetail = (function (Events) {
 		initializeValues: function() {
             this.$container = $("#vodDetailContainer");
             this.$sceneParent = this.$container.closest(".scene");
-            this.$container.css({"visibility": "visible", "background-image": 'url(../assets/images/' + CONFIG.app.brand + '/background.png)'});
+            this.$container.css({"visibility": "visible", "background-image": 'url(../assets/images/bromteck/background.png)'});
 			this.reset();
         },
 
