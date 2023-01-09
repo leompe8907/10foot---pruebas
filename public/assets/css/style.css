@@ -392,10 +392,24 @@ div.horizontal-slide {
   align-items: center;
 }
 
-@media screen and (min-width: 200px) and (max-width:767px) {
+@media (max-width:767px) {
   .modal-login{
-    width: 70vw ;
     justify-content: center;
+    width: 70vw;
+    height: 90vh;
+    border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px
+  }
+}
+
+@media (min-width:768px) and (max-width:1023px){
+  .modal-login{
+    width: 50vw;
+    height: 90vh;
+    border-radius: 9px 9px 9px 9px; 
+    -webkit-border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
   }
 }
 
@@ -467,9 +481,15 @@ div.horizontal-slide {
   width: 15vw;
 }
 
-@media screen and (min-width: 200px) and (max-width: 767px){
+@media (max-width: 767px){
   .img-logo{
-    width: 30vw;
+    width: max-content;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  .img-logo{
+    width: max-content;
   }
 }
 

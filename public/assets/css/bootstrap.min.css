@@ -2026,17 +2026,14 @@ pre code {
 
 .row {
     margin-right: -15px;
-    margin-left: -15px
+    margin-left: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 30vh;
 }
 
-@media screen and (min-width: 200px) and (max-width:767px) {
-    .row {
-        display: flex;
-        align-items: center;
-        width: 35vw;
-        height: 20vh;
-    }
-}
 
 .col-lg-1,
 .col-lg-10,
@@ -2311,7 +2308,13 @@ pre code {
     margin-left: 0
 }
 
-@media (min-width:768px) {
+.col-sm-2 {
+    display: flex;
+    align-items: center;
+}
+
+
+@media (min-width:767px) {
 
     .col-sm-1,
     .col-sm-10,
@@ -2366,13 +2369,6 @@ pre code {
 
     .col-sm-3 {
         width: 25%
-    }
-
-    .col-sm-2 {
-        display: flex;
-        align-items: center;
-        width: 15vw;
-        height: 20vh;
     }
 
 
@@ -7324,6 +7320,17 @@ button.close {
     flex-wrap: nowrap;
 }
 
+@media (max-width:767px) {
+    .modal-dialog {
+        width: 600px;
+        /* margin: 5% auto  */
+    }
+
+@media (min-width:768px) and (max-width:1023px) {
+    .modal-dialog {
+        width: 60vw;
+    }
+
 .modal-content {
     position: relative;
     background-color: #fff;
@@ -7366,18 +7373,6 @@ button.close {
     margin-top: -2px
 }
 
-.modal-title {
-    margin: 0;
-    line-height: 1.42857143;
-    padding: 30px;
-}
-
-@media screen and (min-width: 200px) and (max-width:767px){
-    .modal-title{
-        display: none;
-    }
-}
-
 .modal-body {
     position: relative;
     padding: 15px
@@ -7410,12 +7405,6 @@ button.close {
     overflow: scroll
 }
 
-
-@media (min-width:768px) {
-    .modal-dialog {
-        /* width: 600px;*/
-        /* margin: 5% auto  */
-    }
 
     .modal-content {
         -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
@@ -8327,5 +8316,24 @@ button.close {
         display: none !important
     }
 }
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    padding: 30px;
+    text-align: center;
+}
+
+@media (max-width: 767px){
+    .modal-title{
+    display: none;
+    }
+  }
+
+@media (min-width: 768px) and (max-width: 1023px){
+    .modal-title{
+        display: block;
+    }
+  }
 
 /*# sourceMappingURL=bootstrap.min.css.map */

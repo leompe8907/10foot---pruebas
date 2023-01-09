@@ -51,7 +51,14 @@ body {
     /* background-position: center; */
 }
 
-@media screen and (min-width: 200px) and (max-width:767px){
+@media (max-width:767px){
+	#viewport{
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
 	#viewport{
 		background-size: cover;
 		background-repeat: no-repeat;
@@ -169,6 +176,21 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+@media (max-width:767px){
+	#scene-splash{
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+	#scene-splash{
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
 
 #viewport {
     min-height: 100%;
