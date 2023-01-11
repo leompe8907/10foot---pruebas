@@ -69,11 +69,10 @@ Scene_Home = (function(Scene) {
 				var percInfo = 100 - percPlayer - percLogo;
 				$(".header-row-info").css({'width': percInfo + '%'});
 
-
-				// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 76 "assets/images/" + CONFIG.app.brand + "/logo-top.png"
+				//modificar en la linea 75 el nombre de la empresa
 				$("#topLogoImage").addClass("hide");
 				$("#rightLogoImage").removeClass("hide");
-				$("#rightLogoImage").attr("src", "assets/images/" + CONFIG.app.brand + "/logo-top.png");
+				$("#rightLogoImage").attr("src", "assets/images/bromteck/logo-top.png");
 
 			} else {
 				$("#topLogoImage").removeClass("hide");
@@ -84,7 +83,6 @@ Scene_Home = (function(Scene) {
 				this.$el.find("#menuEPGLabel").parent().addClass("hide");
 			}
 
-			// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 87 antes de ==
 			if (CONFIG.app.brand == "meganet") {
 				$("#menuEPGLabel").parent().hide();
 			}
@@ -309,7 +307,6 @@ Scene_Home = (function(Scene) {
 			var self = this;
 			if (nbPlayerIsFullscreen()) {
 				if (nbPlayerAreControslActive()) {
-
 					if (this.playbackMetadata.type == "vod") { 
 						if (nbPlayer.vodPlayerGetControlType($el) == nbPlayer.vodControlsEnum.trackItem) {
 							nbPlayer.closeTracks();
@@ -787,7 +784,7 @@ Scene_Home = (function(Scene) {
 				+ '</div>'
 				+ '<div class="horizontal-slide row-catchup-dates hidden"></div>'
 				+ '<div class="horizontal-slide row-catchup-events hidden"></div>'
-				 '</div>';
+				'</div>';
 
 				$("#catchupsRow").html(htmlRow);
 				$("#catchupsRow").removeClass("hidden");
@@ -830,7 +827,7 @@ Scene_Home = (function(Scene) {
 				+ '<div class="horizontal-slide row-catchups">'
 				+ cells
 				+ '</div>'
-				 '</div>';
+				'</div>';
 
 				$("#catchupRecordingRow").html(htmlRow);
 				$("#catchupRecordingRow").removeClass("hidden");
@@ -927,8 +924,13 @@ Scene_Home = (function(Scene) {
 			+ '<h4 class="heading">' + title + '</h4>'
 			+ '<div class="horizontal-slide">';
 
+			var style = "";
 			row.items.forEach(function(channel){
-				html += '<div class="channel-video focusable" data-id="' + channel.id + '" data-type="service">'
+				style = "";
+				if (channel.backgroundColor != null && typeof channel.backgroundColor != 'undefined') {
+					style = " background-color: #" + channel.backgroundColor;
+				}
+				html += '<div class="channel-video focusable" data-id="' + channel.id + '" data-type="service" style="' + style + '">'
 					+ '<img src="' + channel.img + '" onerror="imgOnError(this)" alt="">'
 					+ '</div>';
 			});

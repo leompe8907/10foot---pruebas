@@ -81,8 +81,7 @@ jQuery.fn.extend({
 		}
 	},
 
-
-	// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 87 "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png"
+	// modificar la linea 86 el area donde esta el nombre de la empresa
 	loadImage: function(src, placeholder){
 		var defaultPlaceholder = "assets/images/bromteck/placeholder_220x160.png";
 		placeholder = placeholder == null || placeholder.length == 0 ?  defaultPlaceholder : placeholder;
@@ -164,7 +163,7 @@ function getDateFormatted(inDate, justTime) {
     });
 }
 
-// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 172 "assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png"
+//Modificar en la linea 171 el nombre de la empresa
 function imgOnError(event) {
 	event.onerror = null; 
 	var $img = $(event);
@@ -206,8 +205,7 @@ function closeApp() {
     // });
 // }
 
-
-// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 217 assets/images/" + CONFIG.app.brand + "/placeholder_220x160.png
+// Modificar en la linea 216 el nombre de la empresa
 function addImgPlaceholder($images) {
 	$images.each(function() {
 		var placeholder = $(this).data("placeholder");

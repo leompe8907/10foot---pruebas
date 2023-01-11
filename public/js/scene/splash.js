@@ -28,8 +28,7 @@ Scene_Splash = (function (Scene) {
 		/**
 		 * @inheritdoc Scene#render
 		 */
-
-		// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 36,37,38 "assets/images/" + CONFIG.app.brand + "/
+		// modificar las lineas 35,36,37 en el area en donde esta el nombre de la empresa
 		render: function () {
             console.log('render splash scene');
 			$("#alertModalButton").text(__("SettingsOkButton"));

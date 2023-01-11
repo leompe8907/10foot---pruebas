@@ -53,12 +53,17 @@ CONFIG = {
         hideArrows: 15000, // how long can be arrows visible, used only for mode='auto' [ms]
         rightIsReturn: false // set mouse right click to press Return/Back key on RC
     },
+
+	//modificar en la linea 63 el nombre de la empresa 
+	//Modificar en la linea 64 el nombre de la aplicacion
+	//Modificar en la linea 65 el Cv al cual va a apuntar
+	//Modificar ne la linea 66 el token que apunta al CV
 	app: {
 		production: false,
-		brand: CONFIG_CURRENT_BRAND.brand,
-		appName: CONFIG_CURRENT_BRAND.name,
-		drmURL: CONFIG_CURRENT_BRAND.drm,
-		drmToken: CONFIG_CURRENT_BRAND.token,
+		brand: "bromteck",
+		appName: "Bromteck",
+		drmURL: "https://cv01.panaccess.com/",
+		drmToken: "gQposTlrMIOYQVdYBNYC",
 		logoPositionHome: CONFIG_CURRENT_BRAND.logoPositionHome,
 		showTime: CONFIG_CURRENT_BRAND.showTime,
 		epgLineColorTime: CONFIG_CURRENT_BRAND.epgLineColorTime,

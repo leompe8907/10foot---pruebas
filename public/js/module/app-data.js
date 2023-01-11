@@ -2,7 +2,6 @@ AppData = (function (Events) {
 
     var AppData = {};
 
-    // Modificar el this.BASE_URL al cv donde quieren que se apunte
     $.extend(true, AppData, Events, {
         init: function () {
             this.bouquets = [];

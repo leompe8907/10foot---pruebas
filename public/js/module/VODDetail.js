@@ -7,7 +7,7 @@ VODDetail = (function (Events) {
 			this.initializeValues();
         },
 
-		// Cambiar el CONFIG.app.brand por el brand a donde se quiere apuntar en la linea 14 ../assets/images/' + CONFIG.app.brand + '/background.png
+		//modificar la linea 14 en el area donde esta el nombre de la empresa
 		initializeValues: function() {
             this.$container = $("#vodDetailContainer");
             this.$sceneParent = this.$container.closest(".scene");
