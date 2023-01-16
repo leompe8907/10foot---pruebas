@@ -923,7 +923,7 @@ Scene_Home = (function(Scene) {
 			var html = '<div class="col-sm-12 channels-div" data-description="' + row.description + '">'
 			+ '<h4 class="heading">' + title + '</h4>'
 			+ '<div class="horizontal-slide">';
-
+			
 			var style = "";
 			row.items.forEach(function(channel){
 				style = "";

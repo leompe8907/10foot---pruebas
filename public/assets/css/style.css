@@ -404,10 +404,9 @@ div.horizontal-slide {
 .btn-default{
   text-align: center;
   padding: 10px;
-  background-color: #8C8C8C;
   border: none;
   box-shadow: 4px 4px #2c353a;
-  color: #FFFFFF;
+  color: #000000;
 }
 
 .btn-default:focus{

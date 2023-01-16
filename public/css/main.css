@@ -176,3 +176,11 @@ body {
     align-content: center;
     height: 100%;
 }
+
+.div-licenses{
+	justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+    display: flex;
+}

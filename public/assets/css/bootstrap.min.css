@@ -3546,10 +3546,10 @@ fieldset[disabled] .btn-link:hover {
   line-height: 1.5;
   border-radius: 3px;
 }
-.btn-block {
-  display: block;
+/* .btn-block {
+  display: contents;
   width: 100%;
-}
+} */
 .btn-block + .btn-block {
   margin-top: 5px;
 }
@@ -5489,13 +5489,12 @@ a.thumbnail:hover {
   border: 1px solid #ddd;
 }
 .list-group-item:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
 .list-group-item:last-child {
-  margin-bottom: 0;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-radius: 4px;
+
 }
 a.list-group-item,
 button.list-group-item {
