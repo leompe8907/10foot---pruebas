@@ -272,9 +272,6 @@ div.horizontal-slide {
 
 .channels-div{
 	margin-bottom: 1em;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Scroll Bar */
@@ -450,6 +447,7 @@ div.horizontal-slide {
   overflow-y: auto;
   position: relative;
   overflow-x: hidden;
+  text-align: center;
 }
 
 .img-logo {
@@ -837,3 +835,4 @@ div.horizontal-slide {
 .public{
   width: 10%;
 }
+
