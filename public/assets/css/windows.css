@@ -1,0 +1,52 @@
+
+.sec-login
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modallog
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.generallogin
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.titule
+{
+    display: none;
+}
+.inputuser
+{
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+}
+.inputuser:hover
+{
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 1px 3px #f7f7f7;
+    background-color: white;
+    color: black;
+}
+.inputuser:focus
+{
+    border-radius: 15px;
+    color: black;
+    background-color: white;
+
+}
+.licenses
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

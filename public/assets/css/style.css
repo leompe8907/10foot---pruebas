@@ -385,7 +385,7 @@ div.horizontal-slide {
 
 .modal-login {
   max-width: 600px;
-  background-color: #415661;
+  background-color: #0000002e;
   color: #fff;
   text-align: center;
   padding: 40px;
@@ -454,7 +454,7 @@ div.horizontal-slide {
 .img-logo {
   background-color: transparent;
   border: 0;
-  width: 21em;
+  width: 13em;
 }
 
 /* .header-logo {

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
+	<link rel="stylesheet" href="assets/css/windows.css">>
 	<!-- Global stylesheets close -->
 
 	<!-- Video Player Css -->
@@ -101,27 +102,25 @@
 	<div id="viewport">
 		<div id="scene-splash" class="scene" style="display: none">
 		</div>
-		<div id="scene-login" class="scene" style="display: none">
+		<div id="scene-login" class="scene sec-login" style="display: none">
 			<div class="login-div">
-				<div class="row">
-					<div class="col-sm-5 text-center center"></div>
-					<div class="col-sm-2 text-center center">
-						<img src="" alt="" class="img-thumbnail img-logo">
-					</div>
-					<div class="col-sm-5 text-center center"></div>
-				</div>
-				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-login">
-						<div class="">
-							<h3 class="modal-title" id="loginWelcomeLabel"></h3>
+				<div class="modal-dialog modallog" role="document">
+					<div class="modal-content modal-login generallogin">
+						<div class="row row-log">
+							<div class="text-center center">
+								<img src="" alt="" class="img-thumbnail img-logo">
+							</div>
+						</div>
+						<div class="titule">
+							<h3 class="modal-title title" id="loginWelcomeLabel"></h3>
 						</div>
 						<div class="modal-body">
-							<div class="form-group userId-input-parent">
-								<input type="text" class="form-control-lg login-input txtLoginUserId focusable"
+							<div class="form-group userId-input-parent divinput">
+								<input type="text" class="form-control-lg login-input txtLoginUserId focusable inputuser"
 									id="txtLoginUserId" placeholder="" value="">
 							</div>
-							<div class="form-group password-input-parent">
-								<input type="password" class="form-control-lg login-input txtLoginPassword focusable"
+							<div class="form-group password-input-parent divinput">
+								<input type="password" class="form-control-lg login-input txtLoginPassword focusable inputuser"
 									id="txtLoginPassword" placeholder="" value="">
 							</div>
 						</div>
@@ -132,17 +131,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="scene-licenses" class="scene" style="display: none">
+		<div id="scene-licenses" class="scene licenses" style="display: none">
 			<div class="div-licenses">
-				<div class="row">
-					<div class="col-sm-5 text-center center"></div>
-					<div class="col-sm-2 text-center center">
-						<img src="" alt="" class="img-thumbnail img-logo">
-					</div>
-					<div class="col-sm-5 text-center center"></div>
-				</div>
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-login">
+						<div class="row row-log">
+							<div class="text-center center">
+								<img src="" alt="" class="img-thumbnail img-logo">
+							</div>
+						</div>
 						<div class="">
 							<h4 class="modal-title text-left" id="settingsLicenseInstructionsLabel"></h4>
 						</div>
