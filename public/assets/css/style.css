@@ -96,6 +96,11 @@ div.horizontal-slide {
   white-space: nowrap;
   overflow-x: auto;
   padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .img-placeholder {
@@ -443,6 +448,7 @@ div.horizontal-slide {
   overflow-y: auto;
   position: relative;
   overflow-x: hidden;
+  text-align: center;
 }
 
 .img-logo {
@@ -816,3 +822,18 @@ div.horizontal-slide {
   max-height: 100%;
   padding: 1em;
 }
+
+.general{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#tvChannelsRow{
+  width: 80%;
+}
+
+.public{
+  width: 10%;
+}
+
