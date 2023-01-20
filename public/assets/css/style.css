@@ -380,8 +380,8 @@ div.horizontal-slide {
 
 .modal-login {
   max-width: 600px;
-  background-color: #69727629;
-  color: rgb(0, 0, 0);
+  background-color: #415661;
+  color: #fff;
   text-align: center;
   padding: 40px;
 }
@@ -404,9 +404,10 @@ div.horizontal-slide {
 .btn-default{
   text-align: center;
   padding: 10px;
+  background-color: #8C8C8C;
   border: none;
   box-shadow: 4px 4px #2c353a;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .btn-default:focus{
