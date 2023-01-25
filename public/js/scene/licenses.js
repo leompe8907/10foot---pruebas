@@ -15,6 +15,7 @@ Scene_Licenses = (function (Scene) {
             this.license = "";
             this.pin = "";
             this.licenses = [];
+            this.$lastFocused = false;
         },
 
         /**
@@ -77,26 +78,36 @@ Scene_Licenses = (function (Scene) {
 
             var failIfInUse = true;
 
-            if ($el.isInAlertConfirm()) {
+            if ($el.isInAlertConfirm(this.$el)) {
                 if ($el.is(this.$nbAlertConfirmOkButton)) {
                     failIfInUse = false;
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     this.activateLicense(failIfInUse);
                 } else if ($el.is(this.$nbAlertConfirmCancelButton)) {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     Focus.to(this.$firstFocusableItem);
                 }
-            } else if ($el.isInAlertMessage()) {
-                $el.closeAlert();
+            } else if ($el.isInAlertMessage(this.$el)) {
+                $el.closeAlert(this.$el);
                 Focus.to(this.$firstFocusableItem);
             } else { //licenses table and logout option
                 this.$firstFocusableItem = $el;
+                var self = this;
+				var tag = $el.data("tag");
+
+                if (tag == "close_app") {
+                    $el.closeAlert(this.$el);
+					closeApp();
+                    return;
+                }
 
                 if ($el.data("key").toString() == "logout") {
                     cv.logout(function () {
                         $("#divLicenses").html("");
                         Router.go('login');
+                        self.destroyScene();
                     });
+                    return;
                 } else {
                     this.license = $el.data("key").toString();
                     this.pin = $el.data("pin").toString();
@@ -105,15 +116,24 @@ Scene_Licenses = (function (Scene) {
             }
 
         },
+
+        destroyScene: function() {
+            $("#divLicenses").html("");
+			Router.clearHistory();
+			Router.go('login');
+		},
         /**
          * @inheritdoc Scene#onReturn
          */
         onReturn: function ($el, event) {
-            if (App.dialog) {
-                App.dialog.onClose();
+            if ($el.isInAlertConfirm(this.$el) || $el.isInAlertMessage(this.$el)) {
+                $el.closeAlert(this.$el);
+                Focus.to(this.$firstFocusableItem);
                 return false;
             }
-            Router.goBack();
+
+            this.$lastFocused = Focus.focused;
+            this.$el.showAlertConfirm(__("AppCloseApp"), 'close_app', null, null, 'cancel');
             return false;
         },
         /**
@@ -122,7 +142,7 @@ Scene_Licenses = (function (Scene) {
 		navigate: function(direction) {
             var $el = Focus.focused;
 
-            if ($el.isInAlertMessage() || $el.isInAlertConfirm()) { // navigate on dialog
+            if ($el.isInAlertMessage(this.$el) || $el.isInAlertConfirm(this.$el)) { // navigate on dialog
                 this.manageFocusOnAlert(direction, $el.data("parent-type"));
             } else { // navigate on licenses table
                 if (direction === 'down') {
@@ -178,7 +198,7 @@ Scene_Licenses = (function (Scene) {
             App.throbber();
             User.setLicenseToActivate(this.license);
             var self = this;
-
+            this.$lastFocused = Focus.focused;
             if (CONFIG.automaticActivation && typeof this.pin !== undefined && this.pin != null && this.pin.length > 0) {
                 //automatic activation
                 cv.activateStreamingLicense(this.license, this.pin, failIfInUse, function () {
@@ -213,6 +233,7 @@ Scene_Licenses = (function (Scene) {
         autoActivateLicense: function(index) {
 
             if (index >= this.licenses.length) {
+                this.$lastFocused = Focus.focused;
                 this.$el.showAlertMessage(__("SettingsErrorAllLicensesInUse"), "error_autoactivation", null);
                 this.setLicensesData();
                 return;

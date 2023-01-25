@@ -106,17 +106,17 @@ Scene_Login = (function (Scene) {
             } else if (event.target.id == "btnLoginSubmit") {
                 this.submitLogin();
                 return;
-            } else if ($el.isInAlertMessage()) {
+            } else if ($el.isInAlertMessage(this.$el)) {
                 if ($el.is(this.$nbAlertMessageOkButton)) {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     Focus.to(this.$lastFocused);
                 }
-            } else if ($el.isInAlertConfirm()) {
+            } else if ($el.isInAlertConfirm(this.$el)) {
                 if ($el.is(this.$nbAlertConfirmOkButton)) {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     closeApp();
                 } else if ($el.is(this.$nbAlertConfirmCancelButton)) {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     Focus.to(this.$lastFocused);
                 }
             }
@@ -126,8 +126,8 @@ Scene_Login = (function (Scene) {
          * @inheritdoc Scene#onReturn
          */
         onReturn: function ($el, event) {
-            if ($el.isInAlertMessage() || $el.isInAlertConfirm()) {
-				$el.closeAlert();
+            if ($el.isInAlertMessage(this.$el) || $el.isInAlertConfirm(this.$el)) {
+				$el.closeAlert(this.$el);
 				Focus.to(this.$lastFocused);
 			} else {
 				this.$lastFocused = Focus.focused;
@@ -166,7 +166,7 @@ Scene_Login = (function (Scene) {
 
                 Focus.focused.focus();
 
-            } else if (current.isInAlertMessage() || current.isInAlertConfirm()) { // navigate on dialog
+            } else if (current.isInAlertMessage(this.$el) || current.isInAlertConfirm(this.$el)) { // navigate on dialog
                 this.manageFocusOnAlert(direction, current.data("parent-type"));
             }
         },

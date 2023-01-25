@@ -78,6 +78,7 @@ App = (function(Events, Deferrable) {
 			Router.addScene('login', new Scene_Login);
 			Router.addScene('licenses', new Scene_Licenses);
 			Router.addScene('activation', new Scene_Activation);
+			Router.addScene('offline', new Scene_Offline);
 			//Router.addScene('voddetail', new Scene_VODDetail);
 			//Router.go('splash') ;
 		},

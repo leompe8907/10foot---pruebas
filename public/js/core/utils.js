@@ -8,6 +8,14 @@ jQuery.fn.extend({
       	return this.data("parent-type") == "confirm";
     },
 
+    isInAlertMessage: function(scene) {
+		return scene.find(".nb-alert-message:visible").length > 0;
+    },
+
+    isInAlertConfirm: function(scene) {
+		return scene.find(".nb-alert-confirm:visible").length > 0;
+    },
+
 	/**
 	 * 
 	 * @param {Text message (mandatory)} message 
@@ -66,6 +74,14 @@ jQuery.fn.extend({
 
 	closeAlert: function() {
 		var $modal = this.closest(".nb-alert");
+
+		if ($modal.length > 0) {
+			$modal.modal('hide');
+		}
+	},
+
+	closeAlert: function(scene) {
+		var $modal = scene.find(".nb-alert");
 
 		if ($modal.length > 0) {
 			$modal.modal('hide');

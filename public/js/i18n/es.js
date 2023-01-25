@@ -144,4 +144,12 @@ I18n.translations.ES = {
 	"Pornô": "Pornografía",
 	"Erótico": "Erótico",
 	"Nacional": "Nacional",
+
+	"OfflineTitle": "Error de conexión",
+	"OfflineMessage": "Hay un problema para conectarse a internet. Por favor verifica tu conexión y vuelve a intentarlo.",
+	"OfflineRetryButton": "Reintentar",
+	"OfflineExitButton": "Salir",
+	"OnlineTitle": "Conexión restablecida",
+	"OnlineMessage": "La conexión a internet ha sido restablecida.",
+	"OnlineRetryButton": "Actualizar",
 };

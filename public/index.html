@@ -34,7 +34,7 @@
 	<script src="js/core/dropdown.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
 
-	<!-- <script src="js/core/module/developer.js"></script> -->
+	<script src="js/core/module/developer.js"></script>
 	<script src="js/core/module/events.js"></script>
 	<script src="js/core/module/device.js"></script>
 	<script src="js/core/module/storage.js"></script>
@@ -71,6 +71,7 @@
 	<script src="js/lib/sha256.js"></script>
 	<script src="js/core/utils.js"></script>
 
+	<script src="js/scene/offline.js"></script>
 	<script src="js/scene/splash.js"></script>
 	<script src="js/scene/login.js"></script>
 	<script src="js/scene/licenses.js"></script>
@@ -92,6 +93,7 @@
 	<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
 	<script src="js/core/videojs-hlsjs-plugin.js"></script>
 	<script src="js/module/nbplayer.js"></script>
+	<script src="js/core/network.js"></script>
 
 	<style>
 		@charset "UTF-8";
@@ -131,15 +133,17 @@
 				</div>
 			</div>
 		</div>
-		<div id="scene-licenses" class="scene licenses" style="display: none">
+		<div id="scene-licenses" class="scene" style="display: none">
 			<div class="div-licenses">
+				<div class="row">
+					<div class="col-sm-5 text-center center"></div>
+					<div class="col-sm-2 text-center center">
+						<img src="" alt="" class="img-thumbnail img-logo">
+					</div>
+					<div class="col-sm-5 text-center center"></div>
+				</div>
 				<div class="modal-dialog" role="document">
 					<div class="modal-content modal-login">
-						<div class="row row-log">
-							<div class="text-center center">
-								<img src="" alt="" class="img-thumbnail img-logo">
-							</div>
-						</div>
 						<div class="">
 							<h4 class="modal-title text-left" id="settingsLicenseInstructionsLabel"></h4>
 						</div>
@@ -222,11 +226,7 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="row content-row" id="channelsGrid">
-					<div class="general">
-						<div class="public"></div>
-						<div class="row hidden" id="tvChannelsRow">
-						</div>
-						<div class="public"></div>
+					<div class="row hidden" id="tvChannelsRow">
 					</div>
 					<div class="row hidden" id="favoritesRow">
 						<div class="col-sm-12">
@@ -337,6 +337,34 @@
 				</div>
 			</div>
 		</div>
+        <div id="scene-offline" class="scene" style="display: none; font-size: 1.3em">
+            <div class="div-licenses">
+                <div class="row">
+                    <div class="col-sm-5 text-center center"></div>
+                    <div class="col-sm-2 text-center center">
+                        <img src="" alt="" class="img-thumbnail img-logo">
+                    </div>
+                </div>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-login">
+                        <div class="">
+                            <div class="modal-title text-left" id="offlineTitle"></div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-left" id="offlineMessage"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn-default btn-lg btn-block focusable" id="offlineRetryButton">Reintentar</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn-default btn-lg btn-block focusable" id="offlineExitButton">Salir</button>
+                            </div>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</div>
 
 	<div id="nbVjsControlsTemplate" style="display: none">

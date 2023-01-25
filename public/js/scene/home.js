@@ -86,6 +86,8 @@ Scene_Home = (function(Scene) {
 			if (CONFIG.app.brand == "meganet") {
 				$("#menuEPGLabel").parent().hide();
 			}
+			
+			NbNetworkObserver.startObserver(function(){ self.goOnline(); }, function(){ self.goOffline(); });
 		},
 
 		actionMinute: function() {
@@ -164,6 +166,7 @@ Scene_Home = (function(Scene) {
 			$("#catchupRecordingRow").empty();
 			$("#catchupRecordingRow").empty();
 			this.firstLaunch = true;
+			this.$lastFocused = false;
 		},
 
 		getHomeData: function() {
@@ -307,6 +310,7 @@ Scene_Home = (function(Scene) {
 			var self = this;
 			if (nbPlayerIsFullscreen()) {
 				if (nbPlayerAreControslActive()) {
+
 					if (this.playbackMetadata.type == "vod") { 
 						if (nbPlayer.vodPlayerGetControlType($el) == nbPlayer.vodControlsEnum.trackItem) {
 							nbPlayer.closeTracks();
@@ -341,8 +345,11 @@ Scene_Home = (function(Scene) {
 				VODDetail.onReturn(function() {
 					Focus.to(self.$lastFocused);
 				});
-			} else if ($el.isInAlertConfirm()) {
-				$el.closeAlert();
+			} else if ($el.isInAlertConfirm(this.$el)) {
+				$el.closeAlert(this.$el);
+				Focus.to(this.$lastFocused);
+			} else if ($el.isInAlertMessage(this.$el)) {
+				$el.closeAlert(this.$el);
 				Focus.to(this.$lastFocused);
 			} else {
 				this.$lastFocused = Focus.focused;
@@ -364,12 +371,12 @@ Scene_Home = (function(Scene) {
 					self.playContent(type, id, url, object);
 				});
 				return;
-			} else if (VOD.isShowed() && !VODDetail.isShowed() && !$el.hasClass('video-container') && !$el.isInAlertConfirm()) {
+			} else if (VOD.isShowed() && !VODDetail.isShowed() && !$el.hasClass('video-container') && !$el.isInAlertConfirm(this.$el)) {
 				VOD.onEnter($el, function(type, id, url, object) {
 					self.playContent(type, id, url, object);
 				});
 				return;
-			} else if (VODDetail.isShowed() && !$el.hasClass('video-container') && !$el.isInAlertConfirm()) {
+			} else if (VODDetail.isShowed() && !$el.hasClass('video-container') && !$el.isInAlertConfirm(this.$el)) {
 				VODDetail.onEnter($el);
 				return;
 			}
@@ -487,15 +494,15 @@ Scene_Home = (function(Scene) {
 
 				Focus.to($(".exitFullscreenBtn"));
 				$(".exitFullscreenBtn").focus();
-			} else if ($el.isInAlertMessage()) {
-				$el.closeAlert();
+			} else if ($el.isInAlertMessage(this.$el)) {
+				$el.closeAlert(this.$el);
                 Focus.to(this.$lastFocused);
-			} else if ($el.isInAlertConfirm()) {
+			} else if ($el.isInAlertConfirm(this.$el)) {
 				var tag = $el.data("tag");
 				if (typeof tag != 'undefined' && tag != null && tag.length > 0) {
 					if (tag == "license_already_in_use") {
 						this.activateLicense($el.is(this.$nbAlertConfirmOkButton));
-						$el.closeAlert();
+						$el.closeAlert(this.$el);
 						Focus.to(this.$videoContainer);
 						return;
 					} else if (tag == "MoviesContinuePlayback") {
@@ -504,30 +511,30 @@ Scene_Home = (function(Scene) {
 							$nbPlayer.currentTime(timeResume);
 						}
 						$nbPlayer.play();
-						$el.closeAlert();
+						$el.closeAlert(this.$el);
 						try {
 							nbPlayer.requestFullscreen();
 						} catch(e){}
 						return;
 					} else if (tag == "LoginLogoutConfirm") {
 						if ($el.is(this.$nbAlertConfirmOkButton)) {	
-							$nbPlayer.pause();
-							this.clearData();
+							$el.closeAlert(this.$el);
 							cv.logout(function () {
-								Router.go('login');
+								self.destroyScene();
 							});
+							return;
 						} else {
-							$el.closeAlert();
+							$el.closeAlert(this.$el);
 							Focus.to(this.$lastFocused);
 						}
 					}
 				}
 
                 if ($el.is(this.$nbAlertConfirmOkButton)) {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
 					closeApp();
                 } else {
-                    $el.closeAlert();
+                    $el.closeAlert(this.$el);
                     Focus.to(this.$lastFocused);
                 }
 			}
@@ -549,7 +556,7 @@ Scene_Home = (function(Scene) {
 			if (nbPlayerIsFullscreen()) {
 				this.managePlayerNavigation(direction);
 				return;
-			} else if ($el.isInAlertMessage() || $el.isInAlertConfirm()) { // navigate on dialog
+			} else if ($el.isInAlertMessage(this.$el) || $el.isInAlertConfirm(this.$el)) { // navigate on dialog
                 this.manageFocusOnAlert(direction, $el.data("parent-type"));
 				return;
 			}
@@ -589,6 +596,10 @@ Scene_Home = (function(Scene) {
 					$parent.scrollLeft($parent.scrollLeft() + $focusTo.innerWidth() + 20);
 				}
 
+			} else {
+				if (!$el.is(":visible")) {
+					Focus.to($("#divVideoContainer"));
+				}
 			}
 
             return false;
@@ -784,7 +795,7 @@ Scene_Home = (function(Scene) {
 				+ '</div>'
 				+ '<div class="horizontal-slide row-catchup-dates hidden"></div>'
 				+ '<div class="horizontal-slide row-catchup-events hidden"></div>'
-				'</div>';
+				 '</div>';
 
 				$("#catchupsRow").html(htmlRow);
 				$("#catchupsRow").removeClass("hidden");
@@ -827,7 +838,7 @@ Scene_Home = (function(Scene) {
 				+ '<div class="horizontal-slide row-catchups">'
 				+ cells
 				+ '</div>'
-				'</div>';
+				 '</div>';
 
 				$("#catchupRecordingRow").html(htmlRow);
 				$("#catchupRecordingRow").removeClass("hidden");
@@ -923,7 +934,7 @@ Scene_Home = (function(Scene) {
 			var html = '<div class="col-sm-12 channels-div" data-description="' + row.description + '">'
 			+ '<h4 class="heading">' + title + '</h4>'
 			+ '<div class="horizontal-slide">';
-			
+
 			var style = "";
 			row.items.forEach(function(channel){
 				style = "";
@@ -1498,7 +1509,10 @@ Scene_Home = (function(Scene) {
 				this.exitPlayerFullscreen();
 			}
 			this.NBPLAYER_RETRY_AFTER_ERROR = false;
-			this.$el.showAlertConfirm(__("SettingsLicenseUsedContinueHere"), "license_already_in_use", null, null, null);
+			var self = this;
+			NbNetworkObserver.simpleCheckInternetConnection(function() {
+				self.$el.showAlertConfirm(__("SettingsLicenseUsedContinueHere"), "license_already_in_use", null, null, null);
+			}, function() { });
 		}, 
 
 		activateLicense: function(activate) {
@@ -1600,6 +1614,27 @@ Scene_Home = (function(Scene) {
 					}
 				});
 			}
+        },
+
+        goOnline: function () {
+
+        },
+        
+        goOffline: function () {
+            $nbPlayer.reset();
+
+            if (nbPlayerIsFullscreen()) {
+                nbPlayerExitFullscreen();
+            }
+            
+            Router.go("offline");
+        },
+
+		destroyScene: function() {
+			$nbPlayer.reset();
+			this.clearData();
+			Router.clearHistory();
+			Router.go('login');
 		}
 		
 	});

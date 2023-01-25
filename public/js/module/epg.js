@@ -103,7 +103,7 @@ EPG = (function (Events) {
                 return;
             } else if ($el.attr("id") == "divVideoContainer") {
                 return;
-            } else if (this.$detailDialog.hasClass("in") || $el.isInAlertMessage()) {
+            } else if (this.$detailDialog.hasClass("in") || $el.isInAlertMessage(this.homeObject.$el)) {
                 return;
             }
             
@@ -561,7 +561,7 @@ EPG = (function (Events) {
                 }
                 this.closeEPGDialog();
                 return;
-            } else if ($el.isInAlertMessage()) {
+            } else if ($el.isInAlertMessage(this.homeObject.$el)) {
                 var self = this;
                 $el.closeAlertThen(function() { Focus.to(self.$lastEpgFocused); });
             } else { //show epg detail dialog
@@ -660,7 +660,7 @@ EPG = (function (Events) {
         onReturn: function(callback) {
             if (this.$detailDialog != null && this.$detailDialog.hasClass("in")) {
                 this.closeEPGDialog();
-            } else if (Focus.focused.isInAlertMessage()) {
+            } else if (Focus.focused.isInAlertMessage(this.homeObject.$el)) {
                 var self = this;
                 Focus.focused.closeAlertThen(function() {
                     Focus.to(self.$lastEpgFocused);
