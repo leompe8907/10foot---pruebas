@@ -1,5 +1,3 @@
-// modificar la linea 4 para indicar cual es el cv al que se va a apuntar
-// Modificar la linea 5 indicando el token del cv al que se apunta
 var cv = {
 	url: "https://cv01.panaccess.com/",
 	apiToken: "gQposTlrMIOYQVdYBNYC", //DyqjydAnQjYMJuOgcEWm //gQposTlrMIOYQVdYBNYC

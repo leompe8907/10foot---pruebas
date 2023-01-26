@@ -106,23 +106,25 @@
 		</div>
 		<div id="scene-login" class="scene sec-login" style="display: none">
 			<div class="login-div">
-				<div class="modal-dialog modallog" role="document">
-					<div class="modal-content modal-login generallogin">
-						<div class="row row-log">
-							<div class="text-center center center-img">
-								<img src="" alt="" class="img-thumbnail img-logo img-lis">
-							</div>
-						</div>
-						<div class="titule">
-							<h3 class="modal-title title" id="loginWelcomeLabel"></h3>
+				<div class="row">
+					<div class="col-sm-5 text-center center"></div>
+					<div class="col-sm-2 text-center center">
+						<img src="" alt="" class="img-thumbnail img-logo">
+					</div>
+					<div class="col-sm-5 text-center center"></div>
+				</div>
+				<div class="modal-dialog" role="document">
+					<div class="modal-content modal-login">
+						<div class="">
+							<h3 class="modal-title" id="loginWelcomeLabel"></h3>
 						</div>
 						<div class="modal-body">
-							<div class="form-group userId-input-parent divinput">
-								<input type="text" class="form-control-lg login-input txtLoginUserId focusable inputuser"
+							<div class="form-group userId-input-parent">
+								<input type="text" class="form-control-lg login-input txtLoginUserId focusable"
 									id="txtLoginUserId" placeholder="" value="">
 							</div>
-							<div class="form-group password-input-parent divinput">
-								<input type="password" class="form-control-lg login-input txtLoginPassword focusable inputuser"
+							<div class="form-group password-input-parent">
+								<input type="password" class="form-control-lg login-input txtLoginPassword focusable"
 									id="txtLoginPassword" placeholder="" value="">
 							</div>
 						</div>
@@ -133,20 +135,22 @@
 				</div>
 			</div>
 		</div>
-		<div id="scene-licenses" class=" sec-licenses scene " style="display: none">
-			<div class="div-licenses div-lis">
+		<div id="scene-licenses" class="scene" style="display: none">
+			<div class="div-licenses">
+				<div class="row">
+					<div class="col-sm-5 text-center center"></div>
+					<div class="col-sm-2 text-center center">
+						<img src="" alt="" class="img-thumbnail img-logo">
+					</div>
+					<div class="col-sm-5 text-center center"></div>
+				</div>
 				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-login modal-lis">
-						<div class="row row-log">
-							<div class="text-center center center-img">
-								<img src="" alt="" class="img-thumbnail img-logo img-lis">
-							</div>
-						</div>
+					<div class="modal-content modal-login">
 						<div class="">
 							<h4 class="modal-title text-left" id="settingsLicenseInstructionsLabel"></h4>
 						</div>
 						<div class="modal-body">
-							<div class="list-group group-lis" id="divLicenses"></div>
+							<div class="list-group" id="divLicenses"></div>
 						</div>
 					</div>
 				</div>
@@ -182,7 +186,7 @@
 		</div>
 		<div id="scene-home" class="scene" style="display: none">
 			<div class="container-fluid">
-				<div class="row header-row row-information">
+				<div class="row header-row">
 					<div class="row">
 						<div class="col-sm-2">
 							<img src="" alt="" class="img-thumbnail img-logo" id="topLogoImage">
@@ -212,7 +216,7 @@
 								<div id="menuSelectedLabel"></div>
 							</div>
 						</div>
-						<div class="col-sm-2 col-right-logo right-logo">
+						<div class="col-sm-2 col-right-logo">
 							<img src="" alt="" class="img-right-logo img-logo hide" id="rightLogoImage">
 						</div>
 						<div class="col-sm-4">
@@ -224,15 +228,10 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="row content-row" id="channelsGrid">
-						<div class="publicidad-top"></div>
-						<div class="public">
-							<div class="publicidad"></div>
-							<div class="row hidden" id="tvChannelsRow">
-							</div>
-							<div class="publicidad"></div>
-						</div>
+					<div class="row hidden" id="tvChannelsRow">
+					</div>
 					<div class="row hidden" id="favoritesRow">
-						<div class="col-sm-12 canales">
+						<div class="col-sm-12">
 							<div class="channels-div">
 								<h4 class="heading"></h4>
 								<div class="horizontal-slide">
