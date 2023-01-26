@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="assets/css/style.css">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 	<link rel="stylesheet" href="assets/plugins/font-awesome/css/all.min.css">
-	<link rel="stylesheet" href="assets/css/windows.css">>
 	<!-- Global stylesheets close -->
 
 	<!-- Video Player Css -->
@@ -59,6 +58,7 @@
 	<script src="js/core/module/template.js"></script>
 	<script src="js/core/module/analytics.js"></script>
 
+	<link rel="stylesheet" href="assets/css/windows.css">
 
 	<!-- Languages -->
 	<script src="js/i18n/en.js"></script>
@@ -109,8 +109,8 @@
 				<div class="modal-dialog modallog" role="document">
 					<div class="modal-content modal-login generallogin">
 						<div class="row row-log">
-							<div class="text-center center">
-								<img src="" alt="" class="img-thumbnail img-logo">
+							<div class="text-center center center-img">
+								<img src="" alt="" class="img-thumbnail img-logo img-lis">
 							</div>
 						</div>
 						<div class="titule">
@@ -133,22 +133,20 @@
 				</div>
 			</div>
 		</div>
-		<div id="scene-licenses" class="scene" style="display: none">
-			<div class="div-licenses">
-				<div class="row">
-					<div class="col-sm-5 text-center center"></div>
-					<div class="col-sm-2 text-center center">
-						<img src="" alt="" class="img-thumbnail img-logo">
-					</div>
-					<div class="col-sm-5 text-center center"></div>
-				</div>
+		<div id="scene-licenses" class=" sec-licenses scene " style="display: none">
+			<div class="div-licenses div-lis">
 				<div class="modal-dialog" role="document">
-					<div class="modal-content modal-login">
+					<div class="modal-content modal-login modal-lis">
+						<div class="row row-log">
+							<div class="text-center center center-img">
+								<img src="" alt="" class="img-thumbnail img-logo img-lis">
+							</div>
+						</div>
 						<div class="">
 							<h4 class="modal-title text-left" id="settingsLicenseInstructionsLabel"></h4>
 						</div>
 						<div class="modal-body">
-							<div class="list-group" id="divLicenses"></div>
+							<div class="list-group group-lis" id="divLicenses"></div>
 						</div>
 					</div>
 				</div>
@@ -184,7 +182,7 @@
 		</div>
 		<div id="scene-home" class="scene" style="display: none">
 			<div class="container-fluid">
-				<div class="row header-row">
+				<div class="row header-row row-information">
 					<div class="row">
 						<div class="col-sm-2">
 							<img src="" alt="" class="img-thumbnail img-logo" id="topLogoImage">
@@ -214,7 +212,7 @@
 								<div id="menuSelectedLabel"></div>
 							</div>
 						</div>
-						<div class="col-sm-2 col-right-logo">
+						<div class="col-sm-2 col-right-logo right-logo">
 							<img src="" alt="" class="img-right-logo img-logo hide" id="rightLogoImage">
 						</div>
 						<div class="col-sm-4">
@@ -226,10 +224,15 @@
 				</div>
 				<div class="clearfix"></div>
 				<div class="row content-row" id="channelsGrid">
-					<div class="row hidden" id="tvChannelsRow">
-					</div>
+						<div class="publicidad-top"></div>
+						<div class="public">
+							<div class="publicidad"></div>
+							<div class="row hidden" id="tvChannelsRow">
+							</div>
+							<div class="publicidad"></div>
+						</div>
 					<div class="row hidden" id="favoritesRow">
-						<div class="col-sm-12">
+						<div class="col-sm-12 canales">
 							<div class="channels-div">
 								<h4 class="heading"></h4>
 								<div class="horizontal-slide">
