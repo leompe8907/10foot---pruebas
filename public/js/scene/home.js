@@ -40,6 +40,7 @@ Scene_Home = (function(Scene) {
             this.$el.find("#menuEPGLabel").html(__("MenuEPG"));
             this.$el.find("#menuAboutLabel").html(__("MenuAbout"));
             this.$el.find("#menuLogoutLabel").html(__("MenuLogout"));
+            this.$el.find("#menuExitLabel").html(__("MenuExit"));
             this.$el.find("#menuUpdateDataLabel").html(__("MenuUpdateData"));
 			$(".epg-message").html(__("EPGLoading"));
 			EPG.homeObject = this;
@@ -352,6 +353,12 @@ Scene_Home = (function(Scene) {
 				$el.closeAlert(this.$el);
 				Focus.to(this.$lastFocused);
 			} else {
+
+				if (Focus.focused != null && !Focus.focused.is(this.$videoContainer)) {
+					Focus.to(this.$videoContainer);
+					return;
+				}
+
 				this.$lastFocused = Focus.focused;
 				this.$el.showAlertConfirm(__("AppCloseApp"), 'close_app', null, null, 'cancel');
 			}
@@ -484,6 +491,10 @@ Scene_Home = (function(Scene) {
 						case 3: //logout
 							this.$lastFocused = Focus.focused;
 							this.$el.showAlertConfirm(__("LoginLogoutConfirm"), 'LoginLogoutConfirm', __("LoginLogoutButton"), __("LoginLogoutCancelButton"), 'cancel');
+							break;
+						case 4: //exit
+							this.$lastFocused = Focus.focused;
+							this.$el.showAlertConfirm(__("AppCloseApp"), 'close_app', null, null, 'cancel');
 							break;
 					}
 				}

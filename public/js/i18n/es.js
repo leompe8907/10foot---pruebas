@@ -74,6 +74,7 @@ I18n.translations.ES = {
 	"MenuMovies": "Películas", //menu_vods
 	"MenuAbout": "Acerca de", //about.textView.title
 	"MenuLogout": "Cerrar sesión", //menu_logout
+	"MenuExit": "Salir",
 	"MenuUpdateData": "Actualizar datos",
 	"MenuUpdateDataDescription": "Actualizar datos",
 	"MenuTitle": "Otros",

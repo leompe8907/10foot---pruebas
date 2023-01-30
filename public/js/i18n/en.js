@@ -73,6 +73,7 @@ I18n.translations.EN = {
 	"MenuMovies": "VOD", //menu_vods
 	"MenuAbout": "About", //about.textView.title
 	"MenuLogout": "Logout", //menu_logout
+	"MenuExit": "Exit",
 	"MenuUpdateData": "Update data",
 	"MenuUpdateDataDescription": "Update data",
 	"MenuTitle": "Other",
