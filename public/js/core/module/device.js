@@ -136,7 +136,7 @@ Device = (function(Events) {
 		 * @returns {String} Should be in ISO 639-1 (en-gb, cs-cz,...)
 		 */
 		getLanguage: function() {
-			var language = null;
+			var language = "EN";
 
 			try {
 				language = String(window.navigator.language).toLowerCase();
