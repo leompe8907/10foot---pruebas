@@ -108,16 +108,6 @@ var CONFIG_BRANDS = [
     epgLineColorTime: "#2CE308",
     developedBy: "Network Broadcast",
   },
-  {
-    brand: "test",
-    appName: "test",
-    drm: "https://pmdw-1.in.tv.br/",
-    token: "CQSepFFsoFNgyLNDYOpz",
-    logoPositionHome: "top",
-    showTime: true,
-    epgLineColorTime: "#2CE308",
-    developedBy: "Network Broadcast",
-  },
 ];
 
 function _getBrand(brand) {
