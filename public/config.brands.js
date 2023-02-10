@@ -108,6 +108,16 @@ var CONFIG_BRANDS = [
     epgLineColorTime: "#2CE308",
     developedBy: "Network Broadcast",
   },
+  {
+    brand: "fotelka",
+    appName: "Fotelka",
+    drm: "https://cv01.panaccess.com/",
+    token: "gQposTlrMIOYQVdYBNYC",
+    logoPositionHome: "top",
+    showTime: true,
+    epgLineColorTime: "#2CE308",
+    developedBy: "Network Broadcast",
+  },
 ];
 
 function _getBrand(brand) {
